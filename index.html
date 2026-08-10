@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Demo — Column Collapse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#">
+      <span class="brand-mark">◈</span>
+      <span class="brand-name">STUDIO<em>NORTH</em></span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+      <em>MENU</em>
+    </label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#" class="is-current">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Static HTML &amp; CSS — no frameworks</p>
+    <h1>Three columns on desktop.<br>One clean column on phones.</h1>
+    <p class="hero-sub">Same content, same order, same visual style — the layout just re-flows.
+       Resize this page and watch columns 1, 2 and 3 stack one after the other.</p>
+  </div>
+</section>
+
+<main>
+
+  <!-- 3-COLUMN BLOCK -->
+  <section class="band">
+    <div class="wrap">
+      <h2 class="band-title">What we do</h2>
+      <div class="cols-3">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Design translation</h3>
+          <p>Your drawings rebuilt in semantic markup — spacing, type scale and rhythm measured off the
+             source artwork rather than eyeballed.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Responsive logic</h3>
+          <p>Columns collapse in reading order. Nothing is hidden, nothing is duplicated, no separate
+             mobile page to maintain.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Fast by default</h3>
+          <p>Hand-written CSS, system-safe fonts, compressed images and no JavaScript bundle. Pages land
+             in well under a second.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASYMMETRIC 2-COLUMN BLOCK -->
+  <section class="band band-alt">
+    <div class="wrap split">
+      <div class="split-main">
+        <h2>Content column</h2>
+        <p>On desktop this sits beside the sidebar at roughly a 2:1 ratio, exactly like the reference site
+           you sent. On a phone the sidebar drops underneath it instead of squeezing into an unreadable
+           strip.</p>
+        <p>Long-form text keeps a comfortable measure at every width, so line length never runs past the
+           point where it becomes tiring to read.</p>
+        <ul class="ticks">
+          <li>Reading order preserved top to bottom</li>
+          <li>Tap targets sized for thumbs, not cursors</li>
+          <li>Type scales down gently — never below 16px body</li>
+        </ul>
+      </div>
+      <aside class="split-side">
+        <h3>Sidebar</h3>
+        <p class="side-note">Secondary information, contact details, recent posts — whatever the design
+           calls for.</p>
+        <dl class="meta">
+          <dt>Pages</dt><dd>7</dd>
+          <dt>Breakpoints</dt><dd>3</dd>
+          <dt>Frameworks</dt><dd>0</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 4-COLUMN BLOCK -->
+  <section class="band">
+    <div class="wrap">
+      <h2 class="band-title">Four across → two → one</h2>
+      <div class="cols-4">
+        <div class="tile"><span>A</span><p>Tablet drops this grid to two per row.</p></div>
+        <div class="tile"><span>B</span><p>Phones go single file, in order.</p></div>
+        <div class="tile"><span>C</span><p>Gaps and padding shrink with the viewport.</p></div>
+        <div class="tile"><span>D</span><p>No horizontal scrolling at any width.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band band-contact" id="contact">
+    <div class="wrap split">
+      <div class="split-main">
+        <h2>Contact form</h2>
+        <p>A simple working form — validated in the browser, submitted to a plain mail handler.</p>
+        <form class="form" action="#" method="post">
+          <div class="field-row">
+            <p class="field">
+              <label for="f-name">Name <span>*</span></label>
+              <input id="f-name" name="name" type="text" required>
+            </p>
+            <p class="field">
+              <label for="f-mail">E-mail <span>*</span></label>
+              <input id="f-mail" name="email" type="email" required>
+            </p>
+          </div>
+          <p class="field">
+            <label for="f-subj">Subject</label>
+            <input id="f-subj" name="subject" type="text">
+          </p>
+          <p class="field">
+            <label for="f-msg">Message <span>*</span></label>
+            <textarea id="f-msg" name="message" rows="5" required></textarea>
+          </p>
+          <p><button type="submit" class="btn">Send message</button></p>
+        </form>
+      </div>
+      <aside class="split-side">
+        <h3>Details</h3>
+        <p class="side-note">On desktop the form sits left of this panel. On mobile the panel slides
+           below the send button.</p>
+        <p class="side-note">Fields go full width on phones so they're comfortable to type into.</p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <div>
+      <span class="brand-mark">◈</span>
+      <strong>STUDIO NORTH</strong>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#">Home</a><a href="#">About</a><a href="#">Services</a>
+      <a href="#">Projects</a><a href="#">Journal</a><a href="#">Contact</a>
+    </nav>
+    <p class="copy">Demo layout — hand-coded HTML &amp; CSS</p>
+  </div>
+</footer>
+
+</body>
+</html>

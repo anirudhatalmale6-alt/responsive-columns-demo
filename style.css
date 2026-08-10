@@ -1,0 +1,211 @@
+/* ---------------------------------------------------------------
+   Responsive demo — plain CSS, no framework, no JS
+   Breakpoints: 1024px (tablet)  /  680px (phone)
+   ------------------------------------------------------------- */
+
+:root{
+  --ink:#14181d;
+  --ink-soft:#5a636e;
+  --line:#e2e5ea;
+  --paper:#ffffff;
+  --paper-alt:#f6f7f9;
+  --accent:#b8843f;
+  --measure:68ch;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--paper);
+}
+
+h1,h2,h3{line-height:1.2;margin:0 0 .6em;font-weight:600;letter-spacing:-.01em}
+h1{font-size:2.6rem}
+h2{font-size:1.75rem}
+h3{font-size:1.15rem}
+p{margin:0 0 1.1em;max-width:var(--measure)}
+a{color:inherit}
+
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* ---------- header ---------- */
+
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px}
+
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{color:var(--accent);font-size:1.1rem}
+.brand-name{font-weight:700;letter-spacing:.14em;font-size:.95rem}
+.brand-name em{font-style:normal;font-weight:400;color:var(--ink-soft)}
+
+.site-nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.site-nav a{
+  text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent;
+}
+.site-nav a:hover,.site-nav a.is-current{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* burger hidden on desktop */
+.nav-burger{display:none}
+
+/* ---------- hero ---------- */
+
+.hero{padding:84px 0 68px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.hero h1{max-width:20ch}
+.hero-sub{color:var(--ink-soft);max-width:58ch;font-size:1.05rem}
+
+/* ---------- bands ---------- */
+
+.band{padding:72px 0;border-bottom:1px solid var(--line)}
+.band-alt{background:var(--paper-alt)}
+.band-title{margin-bottom:36px}
+
+/* 3 columns */
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:28px 26px}
+.card .num{
+  display:block;font-size:.72rem;letter-spacing:.2em;color:var(--accent);margin-bottom:14px;
+}
+.card p{color:var(--ink-soft);font-size:.95rem;margin:0}
+
+/* 2 columns, asymmetric */
+.split{display:grid;grid-template-columns:2fr 1fr;gap:56px;align-items:start}
+.split-side{
+  border-top:3px solid var(--ink);padding-top:18px;
+}
+.split-side h3{letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+.side-note{color:var(--ink-soft);font-size:.9rem}
+
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{position:relative;padding-left:24px;margin-bottom:8px;color:var(--ink-soft);font-size:.95rem}
+.ticks li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+
+.meta{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.9rem}
+.meta dt{color:var(--ink-soft)}
+.meta dd{margin:0;font-weight:600}
+
+/* 4 columns */
+.cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tile{border-left:2px solid var(--accent);padding:4px 0 4px 18px}
+.tile span{display:block;font-weight:700;font-size:1.4rem;margin-bottom:6px}
+.tile p{color:var(--ink-soft);font-size:.9rem;margin:0}
+
+/* ---------- form ---------- */
+
+.form{max-width:var(--measure)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{margin:0 0 18px;display:block;max-width:none}
+.field label{display:block;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:6px}
+.field label span{color:var(--accent)}
+.field input,.field textarea{
+  width:100%;font:inherit;font-size:.95rem;padding:11px 13px;
+  border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);
+}
+.field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.field textarea{resize:vertical}
+
+.btn{
+  font:inherit;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:#fff;border:0;border-radius:3px;
+  padding:14px 30px;cursor:pointer;
+}
+.btn:hover{background:var(--accent)}
+
+/* ---------- footer ---------- */
+
+.site-footer{padding:44px 0;background:var(--ink);color:#c9cfd7}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-footer strong{color:#fff;letter-spacing:.14em;font-size:.9rem}
+.site-footer nav{display:flex;gap:22px;flex-wrap:wrap}
+.site-footer nav a{text-decoration:none;font-size:.82rem;color:#c9cfd7}
+.site-footer nav a:hover{color:#fff}
+.copy{margin:0;font-size:.78rem;color:#8b939d}
+
+/* =============================================================
+   TABLET  ≤1024px  — 3 cols stay, 4 cols halve, gaps tighten
+   ============================================================= */
+@media (max-width:1024px){
+  .wrap{padding:0 26px}
+  h1{font-size:2.15rem}
+  .cols-3{gap:22px}
+  .cols-4{grid-template-columns:repeat(2,1fr);gap:28px}
+  .split{grid-template-columns:1.6fr 1fr;gap:38px}
+  .site-nav ul{gap:20px}
+  .site-nav a{font-size:.76rem}
+}
+
+/* =============================================================
+   PHONE  ≤680px  — everything to ONE column, in source order
+   ============================================================= */
+@media (max-width:680px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+
+  h1{font-size:1.8rem}
+  h2{font-size:1.4rem}
+
+  /* --- collapsible menu, pure CSS --- */
+  .header-inner{flex-wrap:wrap;min-height:64px;padding-top:10px;padding-bottom:10px}
+  .nav-burger{
+    display:flex;align-items:center;gap:9px;cursor:pointer;
+    font-style:normal;
+  }
+  .nav-burger span{
+    display:block;width:22px;height:2px;background:var(--ink);
+    position:absolute;transition:transform .2s ease,opacity .2s ease;
+  }
+  .nav-burger{position:relative;padding-left:32px;height:22px}
+  .nav-burger span:nth-child(1){top:3px;left:0}
+  .nav-burger span:nth-child(2){top:10px;left:0}
+  .nav-burger span:nth-child(3){top:17px;left:0}
+  .nav-burger em{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+  .site-nav{
+    flex-basis:100%;
+    max-height:0;overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .nav-toggle:checked ~ .site-nav{max-height:420px}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(2){opacity:0}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .site-nav ul{flex-direction:column;gap:0;padding:8px 0 12px}
+  .site-nav li{border-top:1px solid var(--line)}
+  .site-nav a{display:block;padding:13px 0;font-size:.85rem}
+  .site-nav a.is-current{border-bottom:0;color:var(--accent)}
+
+  /* --- the collapse: 1 → 2 → 3, stacked --- */
+  .hero{padding:52px 0 44px}
+  .band{padding:48px 0}
+  .band-title{margin-bottom:26px}
+
+  .cols-3,
+  .cols-4,
+  .split,
+  .field-row{grid-template-columns:1fr;gap:22px}
+
+  .split{gap:36px}
+  .card{padding:22px 20px}
+  .btn{width:100%;padding:16px}
+
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:18px}
+  .site-footer nav{gap:16px}
+}
